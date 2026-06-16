@@ -1,5 +1,5 @@
-const CACHE = 'skytrace-v3';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './src/main.js', './src/style.css', './icons/icon-192.png', './icons/icon-512.png'];
+const CACHE = 'skytrace-v4';
+const ASSETS = ['./', './index.html', './manifest.webmanifest?v=4', './src/main.js?v=4', './src/style.css', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
