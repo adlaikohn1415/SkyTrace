@@ -1,0 +1,15 @@
+{
+  "name": "SkyTrace AR",
+  "short_name": "SkyTrace",
+  "description": "AR-style satellite sky overlay with camera, labels, and flight paths.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#02040a",
+  "background_color": "#02040a",
+  "icons": [
+    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}

@@ -1,0 +1,1 @@
+{"scripts":{"start":"vite --host 0.0.0.0"},"dependencies":{"@vitejs/plugin-basic-ssl":"latest","vite":"latest","satellite.js":"latest"},"devDependencies":{}}

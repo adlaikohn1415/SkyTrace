@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#02040a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SkyTrace" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <title>SkyTrace AR</title>
+</head>
+<body>
+  <video id="camera" autoplay playsinline muted></video>
+  <canvas id="overlay"></canvas>
+
+  <div id="topbar">
+    <div>
+      <strong>SkyTrace AR</strong>
+      <span id="status">Starting…</span>
+    </div>
+    <button id="settingsBtn" aria-label="Open settings">⚙︎</button>
+  </div>
+
+  <div id="permissionPanel" class="panel">
+    <h1>SkyTrace AR</h1>
+    <p>Point your iPhone at the sky to see predicted satellite positions, one moving label per satellite, plus optional flight paths.</p>
+    <button id="startBtn">Enable Camera + Sensors</button>
+    <small>Works best after adding to Home Screen. Requires Safari camera, location, and motion permissions.</small>
+  </div>
+
+  <aside id="settings" class="sheet hidden">
+    <header>
+      <h2>Display Settings</h2>
+      <button id="closeSettings">×</button>
+    </header>
+
+    <label>Satellite type
+      <select id="typeFilter">
+        <option value="visible">Likely visible / bright</option>
+        <option value="all">All loaded satellites</option>
+        <option value="starlink">Starlink only</option>
+        <option value="stations">Space stations</option>
+        <option value="weather">Weather</option>
+        <option value="gps">GPS / navigation</option>
+      </select>
+    </label>
+
+    <label>Minimum elevation
+      <input id="minElev" type="range" min="0" max="60" value="10" />
+      <span id="minElevVal">10°</span>
+    </label>
+
+    <label>Max labels on screen
+      <input id="maxLabels" type="range" min="3" max="60" value="18" />
+      <span id="maxLabelsVal">18</span>
+    </label>
+
+    <label>Flight path
+      <select id="pathLength">
+        <option value="0">Off</option>
+        <option value="30">30 seconds ahead</option>
+        <option value="60" selected>1 minute ahead</option>
+        <option value="120">2 minutes ahead</option>
+        <option value="300">5 minutes ahead</option>
+      </select>
+    </label>
+
+    <label class="row"><span>Night vision mode</span><input id="nightMode" type="checkbox" /></label>
+    <label class="row"><span>Show horizon guide</span><input id="showHorizon" type="checkbox" checked /></label>
+    <label class="row"><span>Use demo satellites if live fetch fails</span><input id="demoFallback" type="checkbox" checked /></label>
+
+    <button id="refreshData">Refresh satellite data</button>
+    <p class="hint">For accurate alignment, slowly move your phone in a figure-eight and point near the Moon or a bright star to check compass drift.</p>
+  </aside>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
