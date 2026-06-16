@@ -1,5 +1,4 @@
-import * as satellite from 'satellite.js';
-import './style.css';
+import * as satellite from 'https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/+esm';
 
 const els = {
   video: document.getElementById('camera'), canvas: document.getElementById('overlay'), status: document.getElementById('status'),
