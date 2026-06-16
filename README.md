@@ -61,3 +61,10 @@ Then open the printed HTTPS/local URL in Safari on your iPhone. For camera permi
 - Add offline packaged TLE snapshots.
 - Add proper privacy page before public deployment.
 - Add server-side TLE caching to avoid CORS/rate-limit issues.
+
+
+## iOS permission fix notes
+
+This build requests DeviceOrientation/DeviceMotion before camera/location because iOS requires motion/orientation permission to be requested directly from the user tap. The app no longer leaves the permission panel up when camera works but motion/location are delayed or unavailable.
+
+If updating from an older build on GitHub Pages, delete the home-screen icon, clear/reload Safari, then add the app to Home Screen again.

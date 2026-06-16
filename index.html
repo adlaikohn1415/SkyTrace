@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="SkyTrace" />
-  <link rel="manifest" href="./manifest.webmanifest?v=2" />
+  <link rel="manifest" href="./manifest.webmanifest?v=3" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <title>SkyTrace AR</title>
   <link rel="stylesheet" href="./src/style.css" />
@@ -29,6 +29,7 @@
     <p>Point your iPhone at the sky to see predicted satellite positions, one moving label per satellite, plus optional flight paths.</p>
     <button id="startBtn">Enable Camera + Sensors</button>
     <small>Works best after adding to Home Screen. Requires Safari camera, location, and motion permissions.</small>
+    <ul id="permissionDetails" class="permission-details"></ul>
   </div>
 
   <aside id="settings" class="sheet hidden">
@@ -76,6 +77,6 @@
     <p class="hint">For accurate alignment, slowly move your phone in a figure-eight and point near the Moon or a bright star to check compass drift.</p>
   </aside>
 
-  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/main.js?v=3"></script>
 </body>
 </html>
